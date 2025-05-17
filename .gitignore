@@ -1,0 +1,8 @@
+# Godot 4+ specific ignores
+.godot/
+/android/
+/Records/**.avi
+screenshot_**.png
+screenshot_**.png.import
+icon.svg
+icon.svg.import

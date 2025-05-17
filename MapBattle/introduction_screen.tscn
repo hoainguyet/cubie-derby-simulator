@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=3 uid="uid://bvtwaf64ibtk8"]
+
+[ext_resource type="Script" path="res://MapBattle/introduction_screen.gd" id="1_v5r06"]
+[ext_resource type="FontFile" uid="uid://dnqu1umxi2wl0" path="res://Assets/VonwaonBitmap-16px.ttf" id="1_yolp6"]
+
+[node name="IntroductionScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+script = ExtResource("1_v5r06")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = -172.0
+offset_right = 128.0
+offset_bottom = -140.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yolp6")
+theme_override_font_sizes/font_size = 32
+text = "Note"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="RichTextLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -320.0
+offset_top = -116.0
+offset_right = 320.0
+offset_bottom = 124.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/line_separation = 3
+theme_override_fonts/normal_font = ExtResource("1_yolp6")
+theme_override_font_sizes/normal_font_size = 24
+text = "  This is the simulation for Wuthering Waves' event named Cubie Derby (Racing Event). I did this as an entertainment. I do not own the idea.
+
+   If you happen to find any bug, text flaw, or inappropriate image, contact me via any means.
+
+   Thank you and happy playing."
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -128.0
+offset_top = 124.0
+offset_right = 128.0
+offset_bottom = 172.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("1_yolp6")
+theme_override_font_sizes/font_size = 24
+text = "I accept"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

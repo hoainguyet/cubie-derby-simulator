@@ -1,0 +1,51 @@
+[gd_scene load_steps=4 format=3 uid="uid://of2atyshwxhm"]
+
+[ext_resource type="Script" path="res://MapBattle/selection_screen.gd" id="1_bldl7"]
+[ext_resource type="PackedScene" uid="uid://c37iny4pxej76" path="res://Supports/selection_button.tscn" id="2_prkqg"]
+[ext_resource type="FontFile" uid="uid://dnqu1umxi2wl0" path="res://Assets/VonwaonBitmap-16px.ttf" id="2_vkej1"]
+
+[node name="SelectionScreen" type="ColorRect"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0.501961)
+script = ExtResource("1_bldl7")
+SelectionButtonSample = ExtResource("2_prkqg")
+
+[node name="ScrollContainer" type="ScrollContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 192.0
+offset_top = 32.0
+offset_right = -320.0
+offset_bottom = -32.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="ScrollContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -296.0
+offset_top = -80.0
+offset_right = -40.0
+offset_bottom = -32.0
+grow_horizontal = 0
+grow_vertical = 0
+theme_override_fonts/font = ExtResource("2_vkej1")
+theme_override_font_sizes/font_size = 24
+text = "Select"
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]

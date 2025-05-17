@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://cfuev2oxthm7v"]
+
+[ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_77ije"]
+[ext_resource type="Script" path="res://DerbyCubes/derby_cube_changli.gd" id="2_35n86"]
+[ext_resource type="Texture2D" uid="uid://dtfpmot3dneuv" path="res://Assets/considering-jinhsi-is-the-first-character-to-get-a-skin-who-v0-224hn3a90qbe1.jpg" id="2_g1udc"]
+
+[node name="DerbyCube_Changli" instance=ExtResource("1_77ije")]
+script = ExtResource("2_35n86")
+cube_name = "changli"
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.039, 0.039)
+texture = ExtResource("2_g1udc")

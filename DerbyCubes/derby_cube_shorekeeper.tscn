@@ -1,0 +1,13 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp0hx0h1cqe3l"]
+
+[ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_sbuok"]
+[ext_resource type="Script" path="res://DerbyCubes/derby_cube_shorekeeper.gd" id="2_882me"]
+[ext_resource type="Texture2D" uid="uid://oq85te4hw4a7" path="res://Assets/please-send-all-of-your-shorekeeper-memes-reactions-v0-z1c4fxz10uue1.jpg" id="2_yhjx4"]
+
+[node name="DerbyCube_Shorekeeper" instance=ExtResource("1_sbuok")]
+script = ExtResource("2_882me")
+cube_name = "shorekeeper"
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.25, 0.229226)
+texture = ExtResource("2_yhjx4")

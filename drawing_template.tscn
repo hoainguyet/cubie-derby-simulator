@@ -1,0 +1,46 @@
+[gd_scene load_steps=6 format=3 uid="uid://bovukswe2gsqn"]
+
+[ext_resource type="Script" path="res://drawing_template.gd" id="1_d4nty"]
+[ext_resource type="PackedScene" uid="uid://bib8m4np5nhvm" path="res://Supports/map_cell.tscn" id="1_v2iwr"]
+[ext_resource type="Texture2D" uid="uid://burqpvvsd1obp" path="res://Assets/finish_point.png" id="2_mb6ea"]
+[ext_resource type="PackedScene" uid="uid://btcn7r5y4k0d0" path="res://DerbyCubes/derby_cube_brant.tscn" id="4_t2a3u"]
+[ext_resource type="PackedScene" uid="uid://chphprmvjua8i" path="res://DerbyCubes/derby_cube_phoebe.tscn" id="5_effj8"]
+
+[node name="DrawingTemplate" type="Node2D"]
+script = ExtResource("1_d4nty")
+
+[node name="MapCell" parent="." instance=ExtResource("1_v2iwr")]
+position = Vector2(192, 416)
+
+[node name="MapCell2" parent="." instance=ExtResource("1_v2iwr")]
+position = Vector2(384, 416)
+
+[node name="MapCell3" parent="." instance=ExtResource("1_v2iwr")]
+position = Vector2(576, 416)
+
+[node name="MapCell4" parent="." instance=ExtResource("1_v2iwr")]
+position = Vector2(768, 416)
+
+[node name="MapCell5" parent="." instance=ExtResource("1_v2iwr")]
+position = Vector2(960, 416)
+
+[node name="Sprite2D2" type="Sprite2D" parent="MapCell5"]
+position = Vector2(0, -32)
+scale = Vector2(0.25, 0.25)
+texture = ExtResource("2_mb6ea")
+
+[node name="DerbyCube_Brant" parent="." instance=ExtResource("4_t2a3u")]
+position = Vector2(192, 368)
+rank = 2
+
+[node name="DerbyCube_Phoebe" parent="." instance=ExtResource("5_effj8")]
+position = Vector2(384, 368)
+
+[node name="Label" type="Label" parent="."]
+offset_left = 136.0
+offset_top = 288.0
+offset_right = 248.0
+offset_bottom = 311.0
+text = "Move first"
+horizontal_alignment = 1
+vertical_alignment = 1

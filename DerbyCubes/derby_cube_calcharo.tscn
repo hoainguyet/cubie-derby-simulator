@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://b5g0xl2tye76u"]
+
+[ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_vce1m"]
+[ext_resource type="Script" path="res://DerbyCubes/derby_cube_calcharo.gd" id="2_0f6s2"]
+[ext_resource type="Texture2D" uid="uid://dbuax0pu2tako" path="res://Assets/need-more-wuwa-memes-v0-p7qutzpwkg7e1.jpg" id="2_prv1k"]
+
+[node name="DerbyCube_Calcharo" instance=ExtResource("1_vce1m")]
+script = ExtResource("2_0f6s2")
+cube_name = "calcharo"
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.167, 0.167)
+texture = ExtResource("2_prv1k")
+region_enabled = true
+region_rect = Rect2(309.58, 8.67, 480, 480)

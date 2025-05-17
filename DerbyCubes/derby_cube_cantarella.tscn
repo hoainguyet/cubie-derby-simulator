@@ -1,0 +1,15 @@
+[gd_scene load_steps=4 format=3 uid="uid://by7tb6qtyka0n"]
+
+[ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_4g13p"]
+[ext_resource type="Texture2D" uid="uid://dfnulw3mtsud2" path="res://Assets/which-one-would-you-pick-changli-or-cantarella-v0-uyebhxunmbse1.jpg" id="2_b5um3"]
+[ext_resource type="Script" path="res://DerbyCubes/derby_cube_cantarella.gd" id="2_r25jr"]
+
+[node name="DerbyCube_Cantarella" instance=ExtResource("1_4g13p")]
+script = ExtResource("2_r25jr")
+cube_name = "cantarella"
+
+[node name="Sprite2D" parent="." index="1"]
+scale = Vector2(0.0416667, 0.0416667)
+texture = ExtResource("2_b5um3")
+region_enabled = true
+region_rect = Rect2(1088, 0, 1920, 1920)

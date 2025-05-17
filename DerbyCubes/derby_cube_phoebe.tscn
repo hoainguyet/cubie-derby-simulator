@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://chphprmvjua8i"]
+
+[ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_k2jjw"]
+[ext_resource type="Script" path="res://DerbyCubes/derby_cube_phoebe.gd" id="2_3n46o"]
+[ext_resource type="Texture2D" uid="uid://bv3vnrcwjn5tm" path="res://Assets/497679348_1245166077219681_346455386910615641_n.jpg" id="2_o0a10"]
+
+[node name="DerbyCube_Phoebe" instance=ExtResource("1_k2jjw")]
+script = ExtResource("2_3n46o")
+cube_name = "phoebe"
+
+[node name="Sprite2D" parent="." index="1"]
+position = Vector2(-1.43051e-06, -1.43051e-06)
+scale = Vector2(0.0740741, 0.0740741)
+texture = ExtResource("2_o0a10")
