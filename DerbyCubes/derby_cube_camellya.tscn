@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_53wy4"]
 [ext_resource type="Script" path="res://DerbyCubes/derby_cube_camellya.gd" id="2_p1528"]
-[ext_resource type="Texture2D" uid="uid://d3awlcn0w1ff2" path="res://Assets/495609631_2554827388196376_8952869138048849047_n.jpg" id="2_wrp07"]
+[ext_resource type="Texture2D" uid="uid://d3awlcn0w1ff2" path="res://Assets/Characters/camellya.jpg" id="2_wrp07"]
 
 [node name="DerbyCube_Camellya" instance=ExtResource("1_53wy4")]
 script = ExtResource("2_p1528")

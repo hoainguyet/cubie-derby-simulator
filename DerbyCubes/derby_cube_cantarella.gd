@@ -45,6 +45,7 @@ func update_active_roll(params: Dictionary) -> bool:
 			cube.stack_i += target_cell.size()
 			cube.cell_i = new_cell_i
 			cube.rank -= over_cube_count		 		# - 1 will be updated via cell_list.gd
+			cube.z_index = params["cell_list"][cube.cell_i].z_index
 			var new_pos: Vector2 = Vector2(
 				params["cell_list"][cube.cell_i].position.x,
 				-96.0 * cube.stack_i + params["cell_list"][cube.cell_i].position.y - 48.0

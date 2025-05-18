@@ -10,7 +10,7 @@
 [ext_resource type="Script" path="res://MapBattle/simulator_state_setup_char.gd" id="4_dhc7l"]
 [ext_resource type="Script" path="res://MapBattle/simulator_state_move_each.gd" id="6_yux77"]
 [ext_resource type="Script" path="res://MapBattle/simulator_state_nothing.gd" id="7_2yl1d"]
-[ext_resource type="Texture2D" uid="uid://bne7e5qmgasxc" path="res://Assets/ricefield-5121505_1920.jpg" id="7_rsgka"]
+[ext_resource type="Texture2D" uid="uid://bhtevj1ecs7pk" path="res://Assets/background-2484823.jpg" id="7_uur6m"]
 [ext_resource type="PackedScene" uid="uid://co083ulqvfwoj" path="res://Supports/dice.tscn" id="8_y26bi"]
 [ext_resource type="FontFile" uid="uid://dnqu1umxi2wl0" path="res://Assets/VonwaonBitmap-16px.ttf" id="14_7cmvw"]
 [ext_resource type="PackedScene" uid="uid://bvtwaf64ibtk8" path="res://MapBattle/introduction_screen.tscn" id="14_xg1wi"]
@@ -26,6 +26,7 @@ fill_from = Vector2(0.5, 0)
 metadata/_snap_enabled = true
 
 [node name="SimulatorScreen" type="Node2D"]
+process_mode = 3
 script = ExtResource("1_bt6gg")
 GameOverScreenSample = ExtResource("2_y8i23")
 SelectionScreenSample = ExtResource("19_slojg")
@@ -33,65 +34,67 @@ IntroductionScreenSample = ExtResource("14_xg1wi")
 AbilitySignSample = ExtResource("3_5ps7e")
 DiceSample = ExtResource("8_y26bi")
 
-[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
-
-[node name="TextureRect" type="TextureRect" parent="ParallaxBackground"]
-modulate = Color(0.4814, 0.4814, 0.58, 1)
-clip_contents = true
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
-texture = ExtResource("7_rsgka")
-expand_mode = 1
-stretch_mode = 3
+[node name="Background" type="Sprite2D" parent="."]
+process_mode = 1
+modulate = Color(1, 1, 1, 0.333333)
+texture = ExtResource("7_uur6m")
 
 [node name="CellList" type="Node2D" parent="." node_paths=PackedStringArray("ordered_cell_node_list")]
+process_mode = 1
 script = ExtResource("2_ygf70")
 ordered_cell_node_list = [NodePath("MapCell23"), NodePath("MapCell24"), NodePath("MapCell"), NodePath("MapCell2"), NodePath("MapCell3"), NodePath("MapCell4"), NodePath("MapCell5"), NodePath("MapCell6"), NodePath("MapCell7"), NodePath("MapCell8"), NodePath("MapCell9"), NodePath("MapCell10"), NodePath("MapCell11"), NodePath("MapCell12"), NodePath("MapCell13"), NodePath("MapCell14"), NodePath("MapCell15"), NodePath("MapCell16"), NodePath("MapCell17"), NodePath("MapCell18"), NodePath("MapCell19"), NodePath("MapCell20"), NodePath("MapCell21"), NodePath("MapCell22")]
-metadata/_edit_lock_ = true
-metadata/_edit_group_ = true
 
 [node name="MapCell" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 1
 position = Vector2(824, 112)
 
 [node name="MapCell2" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(800, 272)
 
 [node name="MapCell3" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(592, 312)
 
 [node name="MapCell4" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(456, 408)
 
 [node name="MapCell5" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(256, 392)
 
 [node name="MapCell6" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(80, 464)
 
 [node name="MapCell7" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(-80, 504)
 type = 2
 
 [node name="MapCell8" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(-272, 512)
 type = 2
 
 [node name="MapCell9" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(-456, 488)
 type = 2
 
 [node name="MapCell10" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(-608, 392)
 type = 2
 
 [node name="MapCell11" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 2
 position = Vector2(-736, 256)
 type = 2
 
 [node name="MapCell12" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = 1
 position = Vector2(-808, 80)
 type = 2
 
@@ -104,34 +107,42 @@ position = Vector2(-608, -200)
 type = 3
 
 [node name="MapCell15" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(-472, -288)
 type = 3
 
 [node name="MapCell16" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(-320, -352)
 type = 3
 
 [node name="MapCell17" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(-136, -408)
 type = 3
 
 [node name="MapCell18" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(56, -416)
 type = 3
 
 [node name="MapCell19" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(248, -400)
 type = 4
 
 [node name="MapCell20" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(440, -376)
 type = 4
 
 [node name="MapCell21" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(632, -312)
 type = 4
 
 [node name="MapCell22" parent="CellList" instance=ExtResource("3_jc48y")]
+z_index = -1
 position = Vector2(808, -232)
 type = 4
 
@@ -158,29 +169,38 @@ limit_smoothed = true
 position_smoothing_enabled = true
 
 [node name="SimulatorStateMachine" type="Node" parent="." node_paths=PackedStringArray("Outside_SimulatorScreen", "Outside_CellList", "curr_state")]
+process_mode = 1
 script = ExtResource("3_so1bb")
 Outside_SimulatorScreen = NodePath("..")
 Outside_CellList = NodePath("../CellList")
 curr_state = NodePath("StateSetupChar")
 
 [node name="StateSetupChar" type="Node" parent="SimulatorStateMachine"]
+process_mode = 1
 script = ExtResource("4_dhc7l")
 
 [node name="OrderTimer" type="Timer" parent="SimulatorStateMachine/StateSetupChar"]
 one_shot = true
 
 [node name="StateMoveEach" type="Node" parent="SimulatorStateMachine"]
+process_mode = 1
 script = ExtResource("6_yux77")
 
 [node name="OrderTimer" type="Timer" parent="SimulatorStateMachine/StateMoveEach"]
 one_shot = true
 
+[node name="TurnTimer" type="Timer" parent="SimulatorStateMachine/StateMoveEach"]
+one_shot = true
+
 [node name="StateNothing" type="Node" parent="SimulatorStateMachine"]
+process_mode = 1
 script = ExtResource("7_2yl1d")
 
 [node name="CanvasLayer" type="CanvasLayer" parent="."]
+process_mode = 1
 
 [node name="TextureRect" type="TextureRect" parent="CanvasLayer"]
+process_mode = 1
 anchors_preset = 9
 anchor_bottom = 1.0
 offset_right = 64.0
@@ -188,6 +208,7 @@ grow_vertical = 2
 texture = SubResource("GradientTexture2D_xi4tw")
 
 [node name="PlayerList" type="Control" parent="CanvasLayer"]
+process_mode = 1
 layout_mode = 3
 anchors_preset = 0
 offset_left = 55.0
@@ -196,6 +217,7 @@ offset_right = 55.0
 offset_bottom = 55.0
 
 [node name="ButtonList" type="HBoxContainer" parent="CanvasLayer"]
+process_mode = 1
 anchors_preset = 3
 anchor_left = 1.0
 anchor_top = 1.0
@@ -214,6 +236,7 @@ alignment = 2
 process_mode = 3
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("14_7cmvw")
 theme_override_font_sizes/font_size = 24
 text = "Start"
@@ -223,6 +246,7 @@ process_mode = 3
 visible = false
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("14_7cmvw")
 theme_override_font_sizes/font_size = 24
 text = "Stop"
@@ -231,11 +255,13 @@ text = "Stop"
 process_mode = 3
 custom_minimum_size = Vector2(128, 0)
 layout_mode = 2
+focus_mode = 0
 theme_override_fonts/font = ExtResource("14_7cmvw")
 theme_override_font_sizes/font_size = 24
 text = "Restart"
 
 [node name="LineEdit" type="LineEdit" parent="CanvasLayer"]
+process_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -250,6 +276,7 @@ text = "1.0"
 alignment = 1
 
 [node name="Label" type="Label" parent="CanvasLayer"]
+process_mode = 1
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -265,6 +292,7 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="AbilityContainer" type="VBoxContainer" parent="CanvasLayer"]
+process_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
 anchor_right = 0.5
@@ -278,6 +306,7 @@ grow_horizontal = 2
 [connection signal="rank_changed" from="CellList" to="." method="_on_cell_list_rank_changed"]
 [connection signal="timeout" from="SimulatorStateMachine/StateSetupChar/OrderTimer" to="SimulatorStateMachine/StateSetupChar" method="_on_order_timer_timeout"]
 [connection signal="timeout" from="SimulatorStateMachine/StateMoveEach/OrderTimer" to="SimulatorStateMachine/StateMoveEach" method="_on_order_timer_timeout"]
+[connection signal="timeout" from="SimulatorStateMachine/StateMoveEach/TurnTimer" to="SimulatorStateMachine/StateMoveEach" method="_on_turn_timer_timeout"]
 [connection signal="pressed" from="CanvasLayer/ButtonList/StartButton" to="." method="_on_start_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonList/StopButton" to="." method="_on_stop_button_pressed"]
 [connection signal="pressed" from="CanvasLayer/ButtonList/RestartButton" to="." method="_on_restart_button_pressed"]

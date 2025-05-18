@@ -27,6 +27,7 @@ func add_initial_players(rank_player_list: Array) -> void:
 		cube.rank = i + 1
 		cube.stack_i = rank_player_list.size() - i - 1
 		cube.cell_i = 0
+		cube.z_index = ordered_cell_node_list[0].z_index
 		rank_player_list[i].rank = i + 1
 		move_cube(cube.cube_name, 0)
 
@@ -111,6 +112,7 @@ func move_cube_and_above(order: int, cube_name: String, animating: bool = true) 
 
 		iter_cube.cell_i = new_cell_i
 		iter_cube.stack_i = i - stack_i + new_cell_size
+		cube.z_index = ordered_cell_node_list[new_cell_i].z_index
 		move_cube(iter_cube.cube_name, new_cell_i, tween)
 		updated = true
 	
@@ -154,5 +156,9 @@ func _ready() -> void:
 	cell_map.resize(ordered_cell_node_list.size())
 	for cell_i: int in range(cell_map.size()):
 		cell_map[cell_i] = []
+	var z_sort_ordered_cell_node_list: Array = ordered_cell_node_list.duplicate()
+	z_sort_ordered_cell_node_list.sort_custom(func (a: MapCell, b: MapCell) -> bool: return a.position.y < b.position.y)
+	for i: int in range(z_sort_ordered_cell_node_list.size()):
+		z_sort_ordered_cell_node_list[i].z_index = i
 
 

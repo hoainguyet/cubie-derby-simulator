@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_kgq5y"]
 [ext_resource type="Script" path="res://DerbyCubes/derby_cube_zani.gd" id="2_g8dih"]
-[ext_resource type="Texture2D" uid="uid://lkqhe8vy15d2" path="res://Assets/my-gallery-is-empty-again-need-more-memes-v0-4gng8jkqzste1.jpg" id="2_y7aya"]
+[ext_resource type="Texture2D" uid="uid://lkqhe8vy15d2" path="res://Assets/Characters/zani.jpg" id="2_y7aya"]
 
 [node name="DerbyCube_Zani" instance=ExtResource("1_kgq5y")]
 script = ExtResource("2_g8dih")

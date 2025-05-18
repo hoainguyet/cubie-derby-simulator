@@ -2,7 +2,7 @@
 
 [ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_sbuok"]
 [ext_resource type="Script" path="res://DerbyCubes/derby_cube_shorekeeper.gd" id="2_882me"]
-[ext_resource type="Texture2D" uid="uid://oq85te4hw4a7" path="res://Assets/please-send-all-of-your-shorekeeper-memes-reactions-v0-z1c4fxz10uue1.jpg" id="2_yhjx4"]
+[ext_resource type="Texture2D" uid="uid://oq85te4hw4a7" path="res://Assets/Characters/shorekeeper.jpg" id="2_yhjx4"]
 
 [node name="DerbyCube_Shorekeeper" instance=ExtResource("1_sbuok")]
 script = ExtResource("2_882me")

@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://vsjm8nwsq3d4"]
 
 [ext_resource type="PackedScene" uid="uid://d1htujlp1dkxy" path="res://DerbyCubes/derby_cube.tscn" id="1_ugfv1"]
-[ext_resource type="Texture2D" uid="uid://wild0hu4224x" path="res://Assets/my-gallery-is-empty-again-need-more-memes-v0-bbpc48nrsrte1.jpg" id="2_7hjj8"]
+[ext_resource type="Texture2D" uid="uid://wild0hu4224x" path="res://Assets/Characters/carlotta.jpg" id="2_7hjj8"]
 [ext_resource type="Script" path="res://DerbyCubes/derby_cube_carlotta.gd" id="2_kqtcv"]
 
 [node name="DerbyCube_Carlotta" instance=ExtResource("1_ugfv1")]

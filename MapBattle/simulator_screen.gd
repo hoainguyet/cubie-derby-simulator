@@ -51,7 +51,7 @@ func _input(event: InputEvent) -> void:
 		$Camera2D.position.x = clamp($Camera2D.position.x, -1536.0 / 2.0, 1536.0 / 2.0)
 		$Camera2D.position.y = clamp($Camera2D.position.y, -1024.0 / 2.0, 1024.0 / 2.0)
 	
-	elif event.is_action_pressed("ui_accept"):
+	elif event.is_action_pressed("ENTER"):
 		await RenderingServer.frame_post_draw
 		var img: Image = get_viewport().get_texture().get_image()
 		img.save_png("screenshot.png")
@@ -178,7 +178,11 @@ func _on_line_edit_text_submitted(new_text: String) -> void:
 	if new_text.is_valid_float():
 		var new_speed: float = new_text.to_float()
 		if new_speed >= 0.0:
-			move_speed = new_speed
+			if new_speed > 32.0:
+				move_speed = 32.0
+				$CanvasLayer/LineEdit.text = str(move_speed)
+			else:
+				move_speed = new_speed
 		else:
 			$CanvasLayer/LineEdit.text = str(move_speed)
 	else:
