@@ -120,7 +120,7 @@ func move_cube_and_above(order: int, cube_name: String, animating: bool = true) 
 		tween.kill()
 
 	# Activate passive abilities for the target cell (Jinhsi, Changli)
-	activate_passive(cube_name, new_cell_i, animating)
+	await activate_passive(cube_name, new_cell_i, animating)
 
 	# Remove elements
 	for i: int in range(old_cell_size - 1, stack_i - 1, -1):

@@ -28,9 +28,9 @@ func move_cube() -> void:
 		return
 
 	Outside_SimulatorScreen.set_roll_active(cube_menu_list[index].cube_name, true)
-	if Outside_CellList.move_cube_and_above(index, cube_menu_list[index].cube_name):
+	if await Outside_CellList.move_cube_and_above(index, cube_menu_list[index].cube_name):
 		reaching_end = true
-		$OrderTimer.wait_time = 1.0 / SimulatorScreen.move_speed
+		$OrderTimer.wait_time = 0.5 / SimulatorScreen.move_speed
 		$OrderTimer.start()
 		return
 

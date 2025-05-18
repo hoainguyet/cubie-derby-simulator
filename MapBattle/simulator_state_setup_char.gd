@@ -61,7 +61,7 @@ func randomise_cubes(animating: bool) -> void:
 	if animating:
 		var tween: Tween = create_tween().set_parallel()
 		for i: int in range(new_list.size()):
-			tween.tween_property(new_list[i], "position:y", i * 100.0, 1.0 / SimulatorScreen.move_speed)	\
+			tween.tween_property(new_list[i], "position:y", i * 100.0 + 50.0, 1.0 / SimulatorScreen.move_speed)	\
 				.set_trans(Tween.TRANS_SINE)	\
 				.set_ease(Tween.EASE_IN_OUT)
 	else:

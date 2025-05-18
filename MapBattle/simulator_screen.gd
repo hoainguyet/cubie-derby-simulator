@@ -16,6 +16,7 @@ var zoom_min: float = 0.5
 var zoom_max: float = 2.0
 var curr_zoom: float = 1.0
 var zoom_factor: float = 0.1
+var in_scroll: bool = false
 
 static var move_speed: float = 1.0
 
@@ -40,7 +41,7 @@ func _ready() -> void:
 func _input(event: InputEvent) -> void:
 	
 	if event.is_action_pressed("MOUSE"):
-		if not dragging:
+		if not dragging and not in_scroll:
 			# mouse_holding_countdown = mouse_holding_delay
 			mouse_pos_before = get_global_mouse_position()
 			pinned_pos_before = $Camera2D.position
@@ -51,18 +52,19 @@ func _input(event: InputEvent) -> void:
 		$Camera2D.position.x = clamp($Camera2D.position.x, -1536.0 / 2.0, 1536.0 / 2.0)
 		$Camera2D.position.y = clamp($Camera2D.position.y, -1024.0 / 2.0, 1024.0 / 2.0)
 	
-	elif event.is_action_pressed("ENTER"):
-		await RenderingServer.frame_post_draw
-		var img: Image = get_viewport().get_texture().get_image()
-		img.save_png("screenshot.png")
+	# elif event.is_action_pressed("ENTER"):
+	# 	await RenderingServer.frame_post_draw
+	# 	var img: Image = get_viewport().get_texture().get_image()
+	# 	img.save_png("screenshot.png")
 
 
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("SCROLL_UP"):
-		clamp_camera_zoom(curr_zoom + zoom_factor)
-	elif event.is_action_pressed("SCROLL_DOWN"):
-		clamp_camera_zoom(curr_zoom - zoom_factor)
+	if not in_scroll:
+		if event.is_action_pressed("SCROLL_UP"):
+			clamp_camera_zoom(curr_zoom + zoom_factor)
+		elif event.is_action_pressed("SCROLL_DOWN"):
+			clamp_camera_zoom(curr_zoom - zoom_factor)
 
 
 
@@ -112,7 +114,7 @@ func set_game_over() -> void:
 
 func set_player_selection() -> void:
 	for cube: DerbyCube in cube_menu_list:
-		$CanvasLayer/PlayerList.remove_child(cube)
+		$CanvasLayer/ScrollContainer/PlayerList.remove_child(cube)
 		cube.queue_free()
 	cube_menu_list.clear()
 	cube_menu_dict.clear()
@@ -206,15 +208,17 @@ func _on_player_selection_selected(player_name_list: Array, screen: Control) -> 
 
 		var cube: DerbyCube = sample.instantiate()
 		var dice: Node2D = DiceSample.instantiate()
-		$CanvasLayer/PlayerList.add_child(cube)
+		$CanvasLayer/ScrollContainer/PlayerList.add_child(cube)
 		cube.add_child(dice)
 
 		dice.position = Vector2(100.0, 0.0)
-		cube.position = Vector2(0.0, i * 100.0)
+		cube.position = Vector2(50.0, i * 100.0 + 50.0)
 		dice.active = false
 
 		cube_menu_list.append(cube)
 		cube_menu_dict[player_name_list[i]] = cube
+	
+	$CanvasLayer/ScrollContainer/PlayerList.custom_minimum_size = Vector2(100.0, player_name_list.size() * 100.0)
 
 	default_player_names = player_name_list
 	$CanvasLayer.remove_child(screen)
@@ -232,5 +236,15 @@ func _on_introduction_screen_disappeared(screen: Control) -> void:
 	$CanvasLayer.remove_child(screen)
 	screen.queue_free()
 	set_player_selection()
+
+
+
+func _on_player_list_mouse_entered() -> void:
+	in_scroll = true
+
+
+
+func _on_player_list_mouse_exited() -> void:
+	in_scroll = false
 
 
